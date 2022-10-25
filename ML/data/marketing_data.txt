@@ -1,0 +1,13 @@
+1,0,Y,A,True
+1,1,N,A,False
+2,0,N,B,False
+2,1,N,C,False
+3,0,N,C,True
+3,1,Y,A,False
+3,0,Y,B,True
+3,1,Y,A,False
+1,0,N,A,False
+1,1,Y,B,True
+1,0,Y,B,True
+1,1,N,B,False
+2,0,Y,C,False

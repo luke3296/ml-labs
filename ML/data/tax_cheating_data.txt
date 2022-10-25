@@ -1,0 +1,10 @@
+Y,Single,125,N
+N,Married,100,N
+N,Single,70,N
+Y,Divorced,120,N
+N,Married,95,Y
+N,Married,60,N
+Y,Divorced,220,N
+N,Single,85,Y
+N,Married,75,N
+N,Single,90,Y

@@ -1,0 +1,1 @@
+Industry,Size,Quoted,Category,Buy
