@@ -81,6 +81,22 @@ missclassifiedInstances = get_missclassified(best_model, test_set_lables,test_se
 for inst in missclassifiedInstances:
     print(best_model.predict_proba(inst))
 
+    for inst in missclassifiedInstances:
+    print(best_model.predict_proba(inst))
+
+# returns the avrage of the top k accuracy probabilities
+def top_k_accuracy(k, model, instances ):
+    probabilities=[]
+    topK=[];
+    for i in range(len(instances)):
+        probabilities.append(model.predict_proba(instances[i]))
+    probabilities=probabilities.sort(reverse=True)
+    for i in k:
+        topK.append(probabilities[i])
+    return topK
+
+        
+
 # returns the avrage of the top k accuracy probabilities
 #def top_k_accuracy(k, model, tests):
     
