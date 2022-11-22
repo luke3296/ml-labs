@@ -1,0 +1,122 @@
+DT by hand 
+0 = no/negative
+1 = yes/posative
+Headache Spots StiffNeck diagnosis
+H  S  SN  D
+1  1   1  1
+0  1   0  1
+1  0   1  1
+0  1   1  1
+1  1   1  1
+0  1   1  1
+1  0   1  1
+0  0   1  0
+0  1   0  0
+0  1   0  0
+1  0   0  0
+0  1   1  0
+0  0   0  0
+1  0   0  0
+D is evenly distrobuted before any splits
+H(X) = - (7/14 * log2(7/14) + 7/14 * log2(7/14))
+I(X) = 1 - ((7/14)^2 + (7/14)^2)   
+
+DT1 Gini
+
+split on headache 
+H_pos
+1  1   1  1
+1  0   1  1
+1  1   1  1
+1  0   1  1
+1  0   0  0
+1  0   0  0  
+H(H_pos1) = - (4/6 * log2(4/6) + 2/6 * log2(2/6))
+I(H_pos1) = 1 - ((4/6)^2 + (2/6)^2) 
+proportion_of_cases = 6/14
+
+H_neg
+0  1   0  1
+0  1   1  1
+0  1   1  1
+0  0   1  0
+0  1   0  0
+0  1   0  0
+0  1   1  0
+0  0   0  0
+H(H_neg1) = - (3/8 * log2(3/8) + 5/8 * log2(5/8))
+I(H_neg1) = 1 - ((3/8)^2 + (5/8)^2) 
+proportion_of_cases = 8/14
+
+split on Sports
+S_pos
+1  1   1  1
+0  1   0  1
+0  1   1  1
+1  1   1  1
+0  1   1  1
+0  1   0  0
+0  1   0  0
+0  1   1  0
+H(S_pos1) = - (5/8 * log2(5/8) + 3/8 * log2(3/8))
+I(S_pos1) = 1 - ((5/8)^2 + (3/8)^2) 
+proportion_of_cases = 8/14
+
+S_neg
+1  0   1  1
+1  0   1  1
+0  0   1  0
+1  0   0  0
+0  0   0  0
+1  0   0  0
+H(S_neg1) = - (2/6 * log2(2/6) + 4/6 * log2(4/6))
+I(S_neg1) = 1 - ((2/6)^2 + (4/6)^2) 
+proportion_of_cases = 6/14
+
+split on StiffNeck
+
+SN_pos
+1  1   1  1
+1  0   1  1
+0  1   1  1
+1  1   1  1
+0  1   1  1
+1  0   1  1
+0  0   1  0
+0  1   1  0
+H(SN_pos1) = - (6/8 * log2(6/8) + 2/8 * log2(2/8))
+I(SN_pos1) = 1 - ((6/8)^2 + (2/8)^2)
+proportion_of_cases = 8/14 
+
+SN_neg
+0  1   0  1
+0  1   0  0
+0  1   0  0
+1  0   0  0
+0  0   0  0
+1  0   0  0
+H(SN_neg1) = - (1/6 * log2(1/6) + 5/6 * log2(5/6))
+I(SN_neg1) = 1 - ((1/6)^2 + (5/6)^2) 
+proportion_of_cases = 6/14 
+
+Gain(X, headache) = H(X) - (6/14*H(H_pos1) + 8/14*H(H_neg1))
+Gini(X, headache) = I(X) - (6/14*I(H_pos1) + 8/14*I(H_neg1))
+Gain(X, headache) =  
+Gain(X, headache) =
+
+Gain(X, Sports)  = H(X) - (8/14*H(S_pos1) + 6/14*H(S_neg1))
+Gini(X, Sports)  = I(X) - (8/14*I(S_pos1) + 6/14*I(S_neg1))
+
+Gain(X, stiffneck) = H(X) - (8/14*H(SN_pos1) + 6/14*H(SN_neg1))
+Gini(X, stiffneck) = I(X) -  (8/14*I(SN_pos1) + 6/14*I(SN_neg1))
+
+
+
+chi-squared
+H  pos: 6/14 neg: 8/14 
+S  pos: 8/14 neg: 6/14
+SN pos: 8/14 neg: 6/14
+
+D+ = 7/14
+D- = 7/14
+

@@ -1,0 +1,3 @@
+IG_headache = 0.016111606370189824
+Gini_headache = 0.010204081632652962
+chi_squared_headache = 1.0
