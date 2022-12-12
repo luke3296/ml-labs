@@ -1,0 +1,10 @@
+let rec JunctionPath_test pSystem (sName:string) (list_str:List<string>)   = 
+    match pSystem with
+    | System(name,aNumber) -> if name = sName then list_str@[name] else []
+    | Junction(name,aList) ->  SplitList_test (aList) (sName) (list_str@[name])
+and SplitList_test list (sName:string) (list_str:List<string>) =
+    match list with 
+    | [] -> []
+    | head :: tail -> (JunctionPath_test head sName list_str)@(SplitList_test (tail) (sName) (list_str)) 
+
+JunctionPath_test Starship "Aft Shields" []
